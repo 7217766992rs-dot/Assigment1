@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta setup for responsiveness and encoding -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>FIA Hackathon</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="text-white font-sans">
+    <!-- ===== HEADER ===== -->
+    <header class="text-center py-6">
+      <h1 class="text-3xl md:text-5xl font-bold">FIA Hackathon</h1>
+    </header>
+
+    <main>
+      <!-- ===== ASTRONAUT SECTION ===== -->
+      <section
+        class="min-h-screen flex flex-col items-center justify-center text-center relative"
+      >
+        <!-- Section Heading -->
+        <h2 class="text-4xl md:text-6xl font-bold mb-10">Why Participate?</h2>
+
+        <!-- Astronaut + Animated Background -->
+        <div class="relative flex items-center justify-center">
+          <!-- Glow effect behind astronaut -->
+          <div class="glow"></div>
+
+          <!-- Rotating orbit rings -->
+          <div class="orbit orbit1"></div>
+          <div class="orbit orbit2"></div>
+          <div class="orbit orbit3"></div>
+
+          <!-- Astronaut image -->
+          <img
+            src="Picture1.png"
+            alt="Astronaut illustration"
+            class="w-44 sm:w-60 md:w-80 float relative z-10"
+          />
+        </div>
+
+        <!-- Feature Cards -->
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-4xl px-4">
+          <!-- Each card represents a benefit -->
+          <li class="card">Mentorship from Experts</li>
+          <li class="card">Internship Opportunities</li>
+          <li class="card">Networking</li>
+          <li class="card">Real-World Impact</li>
+        </ul>
+      </section>
+
+      <!-- ===== TIMELINE SECTION ===== -->
+      <section class="py-20">
+        <!-- Section Heading -->
+        <h2 class="text-3xl text-center mb-16">Hackathon Schedule</h2>
+
+        <!-- Wrapper to center timeline -->
+        <div class="timeline-wrapper">
+          <!-- Ordered list for semantic timeline -->
+          <ol class="timeline">
+            <!-- Timeline Step -->
+            <li class="timeline-step">
+              <p class="title">Registrations Open</p>
+
+              <!-- Interactive slider (click/tap/keyboard controlled) -->
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                class="slider"
+                tabindex="0"
+                aria-label="Registrations progress"
+              />
+
+              <span>Thu, Jul 04, 2025</span>
+            </li>
+
+            <!-- Repeat for each step -->
+            <li class="timeline-step">
+              <p class="title">Problem Statement Released</p>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                class="slider"
+                tabindex="0"
+                aria-label="Problem statement progress"
+              />
+              <span>Thu, Jul 08, 2025</span>
+            </li>
+
+            <li class="timeline-step">
+              <p class="title">Mentor Connect Begins</p>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                class="slider"
+                tabindex="0"
+                aria-label="Mentor connect start progress"
+              />
+              <span>Thu, Jul 10, 2025</span>
+            </li>
+
+            <li class="timeline-step">
+              <p class="title">Mentor Connect Ends</p>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                class="slider"
+                tabindex="0"
+                aria-label="Mentor connect end progress"
+              />
+              <span>Tue, Jul 16, 2025</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===== GALLERY SECTION ===== -->
+      <section class="py-20">
+        <!-- Section Heading -->
+        <h2 class="text-3xl text-center mb-10">Gallery</h2>
+
+        <!-- Image Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
+          <!-- Images with hover animation + lazy loading -->
+          <img
+            src="Picture2.png"
+            loading="lazy"
+            alt="Gallery image"
+            class="img-hover rounded-lg"
+          />
+          <img
+            src="Picture3.png"
+            loading="lazy"
+            alt="Gallery image"
+            class="img-hover rounded-lg"
+          />
+          <img
+            src="Picture2.png"
+            loading="lazy"
+            alt="Gallery image"
+            class="img-hover rounded-lg"
+          />
+          <img
+            src="Picture3.png"
+            loading="lazy"
+            alt="Gallery image"
+            class="img-hover rounded-lg"
+          />
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="text-center py-6 opacity-70">© 2025 FIA</footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

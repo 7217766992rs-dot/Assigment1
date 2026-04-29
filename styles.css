@@ -1,0 +1,187 @@
+/* ===== GLOBAL STYLES ===== */
+
+/* Background gradient for dark theme */
+body {
+  background: radial-gradient(circle, #050816, #02040f);
+}
+
+/* Ensure images scale properly */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ===== ASTRONAUT ANIMATION ===== */
+
+/* Glow effect behind astronaut */
+.glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(139,92,246,0.3), transparent);
+  border-radius: 50%;
+  animation: pulse 6s infinite;
+}
+
+/* Pulsing animation */
+@keyframes pulse {
+  0%,100% { transform: scale(0.9); }
+  50% { transform: scale(1.2); }
+}
+
+/* Orbit rings */
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(139,92,246,0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+}
+
+/* Individual orbit sizes + rotation speeds */
+.orbit1 { width:250px;height:250px; animation: spin 20s linear infinite; }
+.orbit2 { width:350px;height:350px; animation: spin 30s linear infinite reverse; }
+.orbit3 { width:450px;height:450px; animation: spin 40s linear infinite; }
+
+/* Rotation animation */
+@keyframes spin {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to { transform: translate(-50%,-50%) rotate(360deg); }
+}
+
+/* Floating astronaut animation */
+.float {
+  animation: float 5s infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+
+/* ===== CARD STYLES ===== */
+
+/* Glassmorphism effect */
+.card {
+  background: rgba(139,92,246,0.25);
+  padding:20px;
+  border-radius:16px;
+  backdrop-filter: blur(10px);
+}
+
+
+/* ===== TIMELINE ===== */
+
+/* Center wrapper */
+.timeline-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Default: horizontal layout */
+.timeline {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  padding: 20px;
+  max-width: 100%;
+}
+
+/* Each timeline item */
+.timeline-step {
+  min-width: 220px;
+  text-align: center;
+}
+
+
+/* ===== SLIDER ===== */
+
+/* Base slider styling */
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 10px;
+  background: rgba(139,92,246,0.2);
+  outline: none;
+  margin: 10px 0;
+  cursor: pointer;
+
+  /* Enables better touch interaction */
+  touch-action: pan-x;
+}
+
+/* Keyboard focus visibility */
+.slider:focus {
+  outline: 2px solid #8b5cf6;
+}
+
+/* Dynamic fill using CSS variable */
+.slider::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6 var(--value),
+    rgba(139,92,246,0.2) var(--value)
+  );
+}
+
+/* Invisible but clickable thumb */
+.slider::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+}
+
+
+/* ===== IMAGE HOVER EFFECT ===== */
+
+.img-hover {
+  transition: all 0.4s ease;
+  transform: perspective(1000px);
+}
+
+.img-hover:hover {
+  transform: perspective(1000px) scale(1.08) rotateX(5deg) rotateY(-5deg);
+  box-shadow: 0 20px 40px rgba(139,92,246,0.4);
+}
+
+
+/* ===== RESPONSIVENESS ===== */
+
+/* Mobile view */
+@media (max-width: 768px) {
+
+  /* Stack timeline vertically */
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  /* Adjust step width */
+  .timeline-step {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Scale animations */
+  .glow { width: 280px; height: 280px; }
+  .orbit1 { width: 140px; height: 140px; }
+  .orbit2 { width: 200px; height: 200px; }
+  .orbit3 { width: 260px; height: 260px; }
+}
+
+/* Tablet view */
+@media (min-width: 769px) and (max-width: 1040px) {
+
+  /* Grid layout for better balance */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    overflow: hidden;
+  }
+}
